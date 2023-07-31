@@ -2,13 +2,13 @@
 import chalk from 'chalk';
 import fs from 'fs';
 
-// function getArchive(pathArchive){
-    
-//     const encoding = 'utf-8'; 
-//     fs.readFileSync(pathArchive, encoding, (erro, text) =>{
-//         console.log(chalk.green('text'));   
-//     })
-// }
 
-// getArchive('.\arquivos\texto.md');
-    console.log(chalk.green('text'));   
+function getArchive(pathArchive){
+    
+    const encoding = 'utf-8'; 
+    fs.readFile(pathArchive, encoding, (_, text) =>{
+        console.log(chalk.green(text));   
+    })
+}
+
+getArchive('./arquivos/texto.md');
