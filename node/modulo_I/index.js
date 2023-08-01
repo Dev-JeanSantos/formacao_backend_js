@@ -2,6 +2,13 @@
 import chalk from 'chalk';
 import fs from 'fs';
 
+function extraiLinks(texto) {
+    const regex = /\[([^[\]]*?)\]\((https?:\/\/[^\s?#.].[^\s]*)\)/gm;
+    const capturas = [...texto.matchAll(regex)];
+    const resultados = capturas.map(captura => ({[captura[1]]: captura[2]}))
+    return resultados;
+  }
+
 function correctError(error){
     console.log(error);
     throw new Error(chalk.red(error.code, 'Arquivo não encontrado!'));
@@ -12,7 +19,7 @@ async function getArchivePromissesByAssync(pathArchive){
     try{
         const encoding = 'utf-8';
         const text = await fs.promises.readFile(pathArchive, encoding)
-        console.log(chalk.white(text));
+        console.log(extraiLinks(text));
     }catch(error){
         correctError(error)
     }
@@ -29,7 +36,7 @@ function getArchivePromissesByThen(pathArchive){
 
 
 //Normal
-function getArchiveNormal(pathArchive){    
+function getArchiveNormal(pathArchive){
     const encoding = 'utf-8'; 
     fs.readFile(pathArchive, encoding, (error, text) =>{
         if(error){
@@ -39,6 +46,6 @@ function getArchiveNormal(pathArchive){
     })
 }
 
-getArchiveNormal('./arquivos/texto.md');
-getArchivePromissesByThen('./arquivos/texto.md');
+// getArchiveNormal('./arquivos/texto.md');
+// getArchivePromissesByThen('./arquivos/texto.md');
 getArchivePromissesByAssync('./arquivos/texto.md');
