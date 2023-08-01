@@ -48,4 +48,5 @@ function getArchiveNormal(pathArchive){
 
 // getArchiveNormal('./arquivos/texto.md');
 // getArchivePromissesByThen('./arquivos/texto.md');
-getArchivePromissesByAssync('./arquivos/texto.md');
+
+export default getArchivePromissesByAssync;
