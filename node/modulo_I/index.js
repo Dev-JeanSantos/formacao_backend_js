@@ -7,7 +7,7 @@ function correctError(error){
     throw new Error(chalk.red(error.code, 'Arquivo não encontrado!'));
 }
 
-//Promise
+//Promisses com then()
 function getArchiveTwo(pathArchive){
     const encoding = 'utf-8'; 
     fs.promises.readFile(pathArchive, encoding)
