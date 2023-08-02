@@ -27,6 +27,13 @@ export default class User {
     get ativo() {
         return this.#ativo
     }
+
+    set nome(nome){
+        if(nome === ''){
+            throw Error('Nome não pode ser vazio!')
+        }
+        this.#nome = nome
+    }
  
  
     exibirInfos() {

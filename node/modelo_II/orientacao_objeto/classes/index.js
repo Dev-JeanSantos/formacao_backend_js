@@ -7,6 +7,9 @@ const usuario1 = new User('Beltrano Maranhão', 'bel@email.com', '2010-02-04')
 console.log(usuario1)
 console.log(usuario1.exibirInfos())
 
+usuario1.nome = 'Paulo'
+console.log(usuario1.nome)
+
 console.log('------------------------------')
 console.log('Objetos Admin')
 const newAdmin = new Admin('Ciclano', 'ciclano@email.com', '2018-05-01')
