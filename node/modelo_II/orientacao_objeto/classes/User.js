@@ -12,6 +12,6 @@ export default class User{
     }
 }
 
-const usuario1 = new User('Beltrano Maranhão', 'bel@email.com', '2010-02-04')
-console.log(usuario1)
-console.log(usuario1.exibirInfos())
+// const usuario1 = new User('Beltrano Maranhão', 'bel@email.com', '2010-02-04')
+// console.log(usuario1)
+// console.log(usuario1.exibirInfos())
